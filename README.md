@@ -349,5 +349,5 @@
     - **View** the list of payments related to subscriptions
 
 ## User Interfaces
-### Waterframe diagram
-![Waterframe diagram image](/image/31d543109869851.5fdda2da34e98.png)
+### WireFrame diagram
+![WireFrame diagram image](/image/31d543109869851.5fdda2da34e98.png)
