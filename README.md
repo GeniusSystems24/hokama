@@ -1,7 +1,28 @@
 # Future Sages
 [اللغة العربية](/arabic/README.md)
-### **Authentication Table**
-**Description**: Stores authentication information for users, including user ID and encrypted password.
+## Database
+![database diagram](/image/digram-ERD.svg)
+### List of Tables
+1. [Authentication Table](#authentication-table): Stores authentication information for users, including user ID and encrypted password.
+2. [User Table](#user-table): Contains data of users registered in the system.
+3. [Entity Table](#entity-table): Stores information about various entities, such as schools or departments, including managers and contact information.
+4. [Student Table](#student-table): Contains data of registered students, including basic contact information.
+5. [EntityStudent Table](#entitystudent-table): Stores information about the association of students with entities, allowing assignment of students to specific entities.
+6. [Group Table](#group-table): Stores information about groups within entities and allows assignment of managers to the group.
+7. [GroupMember Table](#groupmember-table): Stores the relationships between students and groups to which they belong, allowing a student to belong to multiple groups.
+8. [Domain Table](#domain-table): Includes main domains or categories (e.g., Family, Education).
+9. [Section Table](#section-table): Contains subsections belonging to the main domains.
+10. [Topic Table](#topic-table): Contains topics within each section.
+11. [Competition Table](#competition-table): Contains competition data, including questions, time, and stages.
+12. [UserRound Table](#userround-table): Rounds user Round in domains, sections, and topics.
+13. [Plan Table](#plan-table): Stores information about available subscription plans, including the number of allowed groups and students, and validity duration.
+14. [Subscription Table](#subscription-table): Stores subscription information for entities, including the package of available features such as the number of groups and students.
+15. [SubscriptionPayment Table](#subscriptionpayment-table): Stores information about payments related to subscriptions, including payment date, amount, and payment status.
+
+### Table Structures
+
+#### **Authentication Table**
+- **Description**: Stores authentication information for users, including user ID and encrypted password.
 
 ![alt text](/image/Authentication.svg)
 - **Columns**:
@@ -16,8 +37,8 @@
     - **Delete** authentication data
     - **View** authentication data for users
 
-### **User Table**
-**Description**: Contains data of users registered in the system.
+#### **User Table**
+- **Description**: Contains data of users registered in the system.
 
 ![alt text](/image/user.svg)
 - **Columns**:
@@ -39,8 +60,8 @@
     - **Delete** a user
     - **View** the list of users
 
-### **Entities Table**
-**Description**: Stores information about various entities, such as schools or departments, including managers and contact information.
+#### **Entity Table**
+- **Description**: Stores information about various entities, such as schools or departments, including managers and contact information.
 
 ![alt text](/image/Entity.svg)
 - **Columns**:
@@ -60,8 +81,8 @@
     - **Delete** an entity
     - **View** the list of entities
 
-### **Students Table**
-**Description**: Contains data of registered students, including basic contact information.
+#### **Student Table**
+- **Description**: Contains data of registered students, including basic contact information.
 
 ![alt text](/image/Student.svg)
 - **Columns**:
@@ -79,8 +100,8 @@
     - **Delete** a student
     - **View** the list of students based on the group
 
-### **EntityStudents Table**
-**Description**: Stores information about the association of students with entities, allowing assignment of students to specific entities.
+#### **EntityStudent Table**
+- **Description**: Stores information about the association of students with entities, allowing assignment of students to specific entities.
 
 ![alt text](/image/EntityStudent.svg)
 - **Columns**:
@@ -97,8 +118,8 @@
     - **View** the list of students associated with a particular entity
     - **View** the entities associated with a particular student
 
-### **Groups Table**
-**Description**: Stores information about groups within entities and allows assignment of managers to the group.
+#### **Group Table**
+- **Description**: Stores information about groups within entities and allows assignment of managers to the group.
 
 ![alt text](/image/Group.svg)
 - **Columns**:
@@ -116,7 +137,7 @@
     - **Delete** a group
     - **View** the list of groups based on the entity
 
-### **GroupMembers Table**
+#### **GroupMember Table**
 **Summary**: This table stores the relationships between students and groups to which they belong, allowing a student to belong to multiple groups.
 
 ![alt text](/image/GroupMember.svg)
@@ -137,8 +158,8 @@
     - **View** the list of groups associated with each member
     - **View** the list of members associated with each group
         
-### **Domains Table**
-**Description**: Includes main domains or categories (e.g., Family, Education).
+#### **Domain Table**
+- **Description**: Includes main domains or categories (e.g., Family, Education).
 
 ![alt text](/image/Domain.svg)
 - **Columns**:
@@ -157,8 +178,8 @@
     - **Delete** a domain
     - **View** the list of domains in a specific order
         
-### **Sections Table**
-**Description**: Contains subsections belonging to the main domains.
+#### **Section Table**
+- **Description**: Contains subsections belonging to the main domains.
 
 ![alt text](/image/Section.svg)
 - **Columns**:
@@ -179,8 +200,8 @@
     - **Delete** a section
     - **View** the list of sections based on the domain
         
-### **Topics Table**
-**Description**: Contains topics within each section.
+#### **Topic Table**
+- **Description**: Contains topics within each section.
 
 ![alt text](/image/Topic.svg)
 - **Columns**:
@@ -203,8 +224,8 @@
     - **View** the list of topics based on the section
         
         
-### **Competitions Table**
-**Description**: Contains competition data, including questions, time, and stages.
+#### **Competition Table**
+- **Description**: Contains competition data, including questions, time, and stages.
 
 ![alt text](/image/Competition.svg)
 - **Columns**:
@@ -232,8 +253,8 @@
     - **Delete** a competition
     - **View** the list of competitions
         
-### **UserRound Table**
-**Description**: Rounds user Round in domains, sections, and topics.
+#### **UserRound Table**
+- **Description**: Rounds user Round in competitions.
 
 ![alt text](/image/UserRound.svg)
 - **Columns**:
@@ -256,15 +277,15 @@
     - **View** user Round in specific domains
         
 
-### **Plans Table**
-**Description**: Stores information about available subscription plans, including the number of allowed groups and students, and validity duration.
+#### **Plan Table**
+- **Description**: Stores information about available subscription plans, including the number of allowed groups and students, and validity duration.
 
 ![alt text](/image/Plan.svg)
 - **Columns**:
     - `PlanID`: Unique plan ID (INT) `primary key`
     - `PlanName`: Name of the plan (VARCHAR), such as "Basic Plan", "Premium Plan"
-    - `AllowedGroups`: Maximum allowed number of groups (INT)
-    - `AllowedStudents`: Maximum allowed number of students (INT)
+    - `AllowedGroup`: Maximum allowed number of groups (INT)
+    - `AllowedStudent`: Maximum allowed number of students (INT)
     - `Duration`: Validity duration (VARCHAR), such as "Month", "Year"
     - `Price`: Subscription price (DECIMAL)
     - `Description`: Brief description about the plan (TEXT)
@@ -278,8 +299,8 @@
     - **Delete** a plan
     - **View** the list of available plans
         
-### **Subscriptions Table**
-**Description**: Stores subscription information for entities, including the package of available features such as the number of groups and students.
+#### **Subscription Table**
+- **Description**: Stores subscription information for entities, including the package of available features such as the number of groups and students.
 
 ![alt text](/image/Subscription.svg)
 - **Columns**:
@@ -305,8 +326,8 @@
     - When **deleting an entity**, the associated subscription should be deleted.
     - Ensure that the number of groups and students does not exceed the allowed limits in the subscription.
         
-### **SubscriptionPayments Table**
-**Description**: Stores information about payments related to subscriptions, including payment date, amount, and payment status.
+#### **SubscriptionPayment Table**
+- **Description**: Stores information about payments related to subscriptions, including payment date, amount, and payment status.
 
 ![alt text](/image/SubscriptionPayment.svg)
 - **Columns**:
