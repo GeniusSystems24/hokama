@@ -3,6 +3,7 @@
 ### **Authentication Table**
 **Description**: Stores authentication information for users, including user ID and encrypted password.
 
+![alt text](../image/Authentication.svg)
 - **Columns**:
     - `UserID`: Unique user ID (INT) `Primary key`
     - `PasswordHash`: Encrypted password hash (VARCHAR)
@@ -18,6 +19,7 @@
 ### **User Table**
 **Description**: Contains data of users registered in the system.
 
+![alt text](../image/user.svg)
 - **Columns**:
     - `UserID`: Unique user ID (INT) `Primary key & Foreign key`
     - `UserName`: Full name of the user (VARCHAR)
@@ -40,6 +42,7 @@
 ### **Entities Table**
 **Description**: Stores information about various entities, such as schools or departments, including managers and contact information.
 
+![alt text](../image/Entity.svg)
 - **Columns**:
     - `EntityID`: Unique entity ID (INT) `Primary key`
     - `EntityName`: Name of the entity (VARCHAR)
@@ -60,6 +63,7 @@
 ### **Students Table**
 **Description**: Contains data of registered students, including basic contact information.
 
+![alt text](../image/Student.svg)
 - **Columns**:
     - `StudentID`: Unique student ID (INT) `Primary key & Foreign key`
     - `StudentName`: Full name of the student (VARCHAR)
@@ -78,6 +82,7 @@
 ### **EntityStudents Table**
 **Description**: Stores information about the association of students with entities, allowing assignment of students to specific entities.
 
+![alt text](../image/EntityStudent.svg)
 - **Columns**:
     - `EntityID`: Entity ID (INT) `Primary key`
     - `StudentID`: Student ID (INT)
@@ -95,6 +100,7 @@
 ### **Groups Table**
 **Description**: Stores information about groups within entities and allows assignment of managers to the group.
 
+![alt text](../image/Group.svg)
 - **Columns**:
     - `EntityID`: Entity ID to which the group belongs (INT) `Composite primary key & Foreign key`
     - `GroupID`: Unique group ID (INT) `Composite primary key`
@@ -113,6 +119,7 @@
 ### **GroupMembers Table**
 **Summary**: This table stores the relationships between students and groups to which they belong, allowing a student to belong to multiple groups.
 
+![alt text](../image/GroupMember.svg)
 - **Columns**:
     - `EntityID`: Entity ID to which the group belongs (INT) `Composite Foreign key`
     - `GroupID`: Group ID (INT) `Composite Foreign key`
@@ -133,6 +140,7 @@
 ### **Domains Table**
 **Description**: Includes main domains or categories (e.g., Family, Education).
 
+![alt text](../image/Domain.svg)
 - **Columns**:
     - `EntityID`: Entity ID to which the group belongs (INT) `Composite primary key & Foreign key`
     - `DomainID`: Unique domain ID (INT) `Composite primary key`
@@ -152,6 +160,7 @@
 ### **Sections Table**
 **Description**: Contains subsections belonging to the main domains.
 
+![alt text](../image/Section.svg)
 - **Columns**:
     - `EntityID`: Entity ID to which the group belongs (INT) `Composite primary key & Composite Foreign key`
     - `DomainID`: Unique domain ID (INT) `Composite primary key & Composite Foreign key`
@@ -173,6 +182,7 @@
 ### **Topics Table**
 **Description**: Contains topics within each section.
 
+![alt text](../image/Topic.svg)
 - **Columns**:
     - `EntityID`: Entity ID to which the group belongs (INT) `Composite primary key & Composite Foreign key`
     - `DomainID`: Unique domain ID (INT) `Composite primary key & Composite Foreign key`
@@ -196,6 +206,7 @@
 ### **Competitions Table**
 **Description**: Contains competition data, including questions, time, and stages.
 
+![alt text](../image/Competition.svg)
 - **Columns**:
     - `EntityID`: Entity ID to which the group belongs (INT) `Composite primary key & Composite Foreign key`
     - `DomainID`: Unique domain ID (INT) `Composite primary key & Composite Foreign key`
@@ -224,6 +235,7 @@
 ### **UserRound Table**
 **Description**: Rounds user Round in domains, sections, and topics.
 
+![alt text](../image/UserRound.svg)
 - **Columns**:
     - `EntityID`: Entity ID to which the group belongs (INT) `Composite primary key & Composite Foreign key`
     - `DomainID`: Unique domain ID (INT) `Composite primary key & Composite Foreign key`
@@ -247,6 +259,7 @@
 ### **Plans Table**
 **Description**: Stores information about available subscription plans, including the number of allowed groups and students, and validity duration.
 
+![alt text](../image/Plan.svg)
 - **Columns**:
     - `PlanID`: Unique plan ID (INT) `primary key`
     - `PlanName`: Name of the plan (VARCHAR), such as "Basic Plan", "Premium Plan"
@@ -268,6 +281,7 @@
 ### **Subscriptions Table**
 **Description**: Stores subscription information for entities, including the package of available features such as the number of groups and students.
 
+![alt text](../image/Subscription.svg)
 - **Columns**:
     - `SubscriptionID`: Unique subscription ID (INT) `primary key`
     - `PlanID`: Plan ID (INT) `foreign key`
@@ -294,6 +308,7 @@
 ### **SubscriptionPayments Table**
 **Description**: Stores information about payments related to subscriptions, including payment date, amount, and payment status.
 
+![alt text](../image/SubscriptionPayment.svg)
 - **Columns**:
     - `PaymentID`: Unique payment ID (INT) `primary key`
     - `SubscriptionID`: Associated subscription ID (INT) `foreign key`

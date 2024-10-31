@@ -1,0 +1,468 @@
+<mxfile host="Electron" modified="2024-10-31T00:26:59.225Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.2 Chrome/114.0.5735.289 Electron/25.9.4 Safari/537.36" etag="QVHXqohdpUWe7mrP8Bai" version="22.1.2" type="device" pages="2">
+  <diagram name="ERD" id="hwRXHwYlmN7OitarI402">
+    <mxGraphModel dx="1295" dy="1858" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="P8JqCdYBpQHJv0acO1Ic-2" value="GroupMember" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="50" y="-360" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="P8JqCdYBpQHJv0acO1Ic-3" value="Topic" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="293" y="-370" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="P8JqCdYBpQHJv0acO1Ic-4" value="Student" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="600" y="-380" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="P8JqCdYBpQHJv0acO1Ic-5" value="SubscriptionPayment" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="600" y="-300" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="P8JqCdYBpQHJv0acO1Ic-6" value="UserRound" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="293" y="-290" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="P8JqCdYBpQHJv0acO1Ic-7" value="Subscription" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="50" y="-280" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="P8JqCdYBpQHJv0acO1Ic-8" value="Entity" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="600" y="-600" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="P8JqCdYBpQHJv0acO1Ic-9" value="Competition" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="293" y="-590" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="P8JqCdYBpQHJv0acO1Ic-10" value="EntityStudent" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="50" y="-580" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="P8JqCdYBpQHJv0acO1Ic-11" value="Group" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="600" y="-480" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="P8JqCdYBpQHJv0acO1Ic-12" value="Section" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="293" y="-470" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="P8JqCdYBpQHJv0acO1Ic-13" value="Domain" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="50" y="-460" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="P8JqCdYBpQHJv0acO1Ic-14" value="User" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="600" y="-700" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="P8JqCdYBpQHJv0acO1Ic-15" value="Plan" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="293" y="-690" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="P8JqCdYBpQHJv0acO1Ic-16" value="Authentication" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="50" y="-680" width="160" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Tables" id="ACTJizN5Qxo46IwupQNN">
+    <mxGraphModel dx="1036" dy="1706" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-0" />
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-1" parent="aL5RLeebEqvUCbHwp5d0-0" />
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-2" value="Competition Table" style="swimlane;startSize=20;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-1">
+          <mxGeometry x="285" y="-680" width="270" height="254" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-3" value="EntityID: INT (Composite PK, Composite FK)" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-2">
+          <mxGeometry y="20" width="270" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-4" value="DomainID: INT (Composite PK, Composite FK)" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-2">
+          <mxGeometry y="46" width="270" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-5" value="CompetitionID: INT (Composite PK)" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-2">
+          <mxGeometry y="72" width="270" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-6" value="CompetitionName: VARCHAR" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-2">
+          <mxGeometry y="98" width="270" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-7" value="CompetitionDescription: VARCHAR" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-2">
+          <mxGeometry y="124" width="270" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-8" value="CompetitionDate: DATE" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-2">
+          <mxGeometry y="150" width="270" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-9" value="Status: INT" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-2">
+          <mxGeometry y="176" width="270" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-10" value="CreatedDate: DATE" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-2">
+          <mxGeometry y="202" width="270" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-11" value="UpdatedDate: DATE" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-2">
+          <mxGeometry y="228" width="270" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-12" value="Domain Table" style="swimlane;startSize=20;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-1">
+          <mxGeometry x="40" y="-374" width="200" height="228" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-13" value="EntityID: INT (Composite PK, FK)" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-12">
+          <mxGeometry y="20" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-14" value="DomainID: INT (Composite PK)" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-12">
+          <mxGeometry y="46" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-15" value="DomainName: VARCHAR" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-12">
+          <mxGeometry y="72" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-16" value="DomainImage: VARCHAR" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-12">
+          <mxGeometry y="98" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-17" value="DomainOrder: INT" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-12">
+          <mxGeometry y="124" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-18" value="Status: INT" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-12">
+          <mxGeometry y="150" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-19" value="CreatedDate: DATE" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-12">
+          <mxGeometry y="176" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-20" value="UpdatedDate: DATE" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-12">
+          <mxGeometry y="202" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-21" value="Entity Table" style="swimlane;startSize=20;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-1">
+          <mxGeometry x="600" y="-680" width="200" height="254" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-22" value="EntityID: INT (PK)" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-21">
+          <mxGeometry y="20" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-23" value="EntityName: VARCHAR" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-21">
+          <mxGeometry y="46" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-24" value="ManagerID: VARCHAR (FK)" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-21">
+          <mxGeometry y="72" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-25" value="EntityPhone: VARCHAR" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-21">
+          <mxGeometry y="98" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-26" value="EntityEmail: VARCHAR" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-21">
+          <mxGeometry y="124" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-27" value="EntityImage: VARCHAR" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-21">
+          <mxGeometry y="150" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-28" value="Status: INT" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-21">
+          <mxGeometry y="176" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-29" value="CreatedDate: DATE" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-21">
+          <mxGeometry y="202" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-30" value="UpdatedDate: DATE" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-21">
+          <mxGeometry y="228" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-31" value="EntityStudent Table" style="swimlane;startSize=20;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-1">
+          <mxGeometry x="40" y="-680" width="200" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-32" value="EntityID: INT (PK)" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-31">
+          <mxGeometry y="20" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-33" value="StudentID: INT" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-31">
+          <mxGeometry y="46" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-34" value="Status: INT" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-31">
+          <mxGeometry y="72" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-35" value="CreatedDate: DATE" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-31">
+          <mxGeometry y="98" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-36" value="UpdatedDate: DATE" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-31">
+          <mxGeometry y="124" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-37" value="Group Table" style="swimlane;startSize=20;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-1">
+          <mxGeometry x="600" y="-374" width="200" height="202" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-38" value="EntityID: INT (Composite PK, FK)" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-37">
+          <mxGeometry y="20" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-39" value="GroupID: INT (Composite PK)" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-37">
+          <mxGeometry y="46" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-40" value="GroupName: VARCHAR" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-37">
+          <mxGeometry y="72" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-41" value="GroupImage: VARCHAR" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-37">
+          <mxGeometry y="98" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-42" value="Status: INT" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-37">
+          <mxGeometry y="124" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-43" value="CreatedDate: DATE" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-37">
+          <mxGeometry y="150" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-44" value="UpdatedDate: DATE" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-37">
+          <mxGeometry y="176" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-45" value="Plan Table" style="swimlane;startSize=20;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-1">
+          <mxGeometry x="320" y="-1040" width="200" height="176" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-46" value="PlanID: INT (PK)" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-45">
+          <mxGeometry y="20" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-47" value="PlanName: VARCHAR" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-45">
+          <mxGeometry y="46" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-48" value="AllowedGroups: INT" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-45">
+          <mxGeometry y="72" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-49" value="AllowedStudents: INT" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-45">
+          <mxGeometry y="98" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-50" value="Duration: VARCHAR" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-45">
+          <mxGeometry y="124" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-51" value="Price: DECIMAL" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-45">
+          <mxGeometry y="150" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-52" value="GroupMember Table" style="swimlane;startSize=20;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-1">
+          <mxGeometry x="40" y="449" width="200" height="228" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-53" value="EntityID: INT (Composite FK)" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-52">
+          <mxGeometry y="20" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-54" value="GroupID: INT (Composite FK)" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-52">
+          <mxGeometry y="46" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-55" value="MemberID: INT (FK)" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-52">
+          <mxGeometry y="72" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-56" value="LinkID: INT (PK)" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-52">
+          <mxGeometry y="98" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-57" value="Rank: VARCHAR" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-52">
+          <mxGeometry y="124" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-58" value="Status: INT" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-52">
+          <mxGeometry y="150" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-59" value="CreatedDate: DATE" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-52">
+          <mxGeometry y="176" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-60" value="UpdatedDate: DATE" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-52">
+          <mxGeometry y="202" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-61" value="Section Table" style="swimlane;startSize=20;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-1">
+          <mxGeometry x="293" y="-374" width="255" height="254" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-62" value="EntityID: INT (Composite PK, Composite FK)" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-61">
+          <mxGeometry y="20" width="255" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-63" value="DomainID: INT (Composite PK, Composite FK)" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-61">
+          <mxGeometry y="46" width="255" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-64" value="SectionID: INT (Composite PK)" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-61">
+          <mxGeometry y="72" width="255" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-65" value="SectionName: VARCHAR" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-61">
+          <mxGeometry y="98" width="255" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-66" value="SectionImage: VARCHAR" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-61">
+          <mxGeometry y="124" width="255" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-67" value="SectionOrder: INT" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-61">
+          <mxGeometry y="150" width="255" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-68" value="Status: INT" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-61">
+          <mxGeometry y="176" width="255" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-69" value="CreatedDate: DATE" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-61">
+          <mxGeometry y="202" width="255" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-70" value="UpdatedDate: DATE" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-61">
+          <mxGeometry y="228" width="255" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-71" value="Student Table" style="swimlane;startSize=20;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-1">
+          <mxGeometry x="600" y="449" width="200" height="202" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-72" value="StudentID: INT (PK, FK)" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-71">
+          <mxGeometry y="20" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-73" value="StudentName: VARCHAR" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-71">
+          <mxGeometry y="46" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-74" value="StudentPhone: VARCHAR" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-71">
+          <mxGeometry y="72" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-75" value="StudentEmail: VARCHAR" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-71">
+          <mxGeometry y="98" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-76" value="Status: INT" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-71">
+          <mxGeometry y="124" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-77" value="CreatedDate: DATE" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-71">
+          <mxGeometry y="150" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-78" value="UpdatedDate: DATE" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-71">
+          <mxGeometry y="176" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-79" value="Subscription Table" style="swimlane;startSize=20;flipH=1;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-1">
+          <mxGeometry x="40" y="40" width="200" height="228" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-80" value="SubscriptionID: INT (PK)" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-79">
+          <mxGeometry y="20" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-81" value="UserID: INT (FK)" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-79">
+          <mxGeometry y="46" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-82" value="PlanID: INT (FK)" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-79">
+          <mxGeometry y="72" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-83" value="StartDate: DATE" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-79">
+          <mxGeometry y="98" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-84" value="EndDate: DATE" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-79">
+          <mxGeometry y="124" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-85" value="Status: INT" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-79">
+          <mxGeometry y="150" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-86" value="CreatedDate: DATE" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-79">
+          <mxGeometry y="176" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-87" value="UpdatedDate: DATE" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-79">
+          <mxGeometry y="202" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-88" value="SubscriptionPayment Table" style="swimlane;startSize=20;flipH=1;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-1">
+          <mxGeometry x="600" y="40" width="200" height="228" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-89" value="PaymentID: INT (PK)" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-88">
+          <mxGeometry y="20" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-90" value="SubscriptionID: INT (FK)" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-88">
+          <mxGeometry y="46" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-91" value="PaymentDate: DATE" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-88">
+          <mxGeometry y="72" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-92" value="Amount: DECIMAL" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-88">
+          <mxGeometry y="98" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-93" value="PaymentMethod: VARCHAR" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-88">
+          <mxGeometry y="124" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-94" value="Status: INT" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-88">
+          <mxGeometry y="150" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-95" value="CreatedDate: DATE" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-88">
+          <mxGeometry y="176" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-96" value="UpdatedDate: DATE" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-88">
+          <mxGeometry y="202" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-97" value="Topic Table" style="swimlane;startSize=20;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-1">
+          <mxGeometry x="293" y="449" width="255" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-98" value="EntityID: INT (Composite PK, Composite FK)" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-97">
+          <mxGeometry y="20" width="255" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-99" value="DomainID: INT (Composite PK, Composite FK)" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-97">
+          <mxGeometry y="46" width="255" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-100" value="SectionID: INT (Composite PK, Composite FK)" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-97">
+          <mxGeometry y="72" width="255" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-101" value="TopicID: INT (Composite PK)" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-97">
+          <mxGeometry y="98" width="255" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-102" value="TopicName: VARCHAR" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-97">
+          <mxGeometry y="124" width="255" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-103" value="TopicImage: VARCHAR" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-97">
+          <mxGeometry y="150" width="255" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-104" value="TopicOrder: INT" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-97">
+          <mxGeometry y="176" width="255" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-105" value="Status: INT" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-97">
+          <mxGeometry y="202" width="255" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-106" value="CreatedDate: DATE" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-97">
+          <mxGeometry y="228" width="255" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-107" value="UpdatedDate: DATE" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-97">
+          <mxGeometry y="254" width="255" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-108" value="User Table" style="swimlane;startSize=20;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-1">
+          <mxGeometry x="600" y="-1040" width="200" height="306" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-109" value="UserID: INT (PK)" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-108">
+          <mxGeometry y="20" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-110" value="UserName: VARCHAR" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-108">
+          <mxGeometry y="46" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-111" value="UserImage: VARCHAR" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-108">
+          <mxGeometry y="72" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-112" value="UserPhone: VARCHAR" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-108">
+          <mxGeometry y="98" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-113" value="UserEmail: VARCHAR" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-108">
+          <mxGeometry y="124" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-114" value="UserGender: VARCHAR" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-108">
+          <mxGeometry y="150" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-115" value="UserBirthdate: DATE" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-108">
+          <mxGeometry y="176" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-116" value="UserRank: VARCHAR" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-108">
+          <mxGeometry y="202" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-117" value="Status: INT" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-108">
+          <mxGeometry y="228" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-118" value="CreatedDate: DATE" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-108">
+          <mxGeometry y="254" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-119" value="UpdatedDate: DATE" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-108">
+          <mxGeometry y="280" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-120" value="UserRound Table" style="swimlane;startSize=20;flipH=1;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-1">
+          <mxGeometry x="280" y="40" width="280" height="306" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-121" value="EntityID: INT (Composite PK, Composite FK)" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-120">
+          <mxGeometry y="20" width="280" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-122" value="DomainID: INT (Composite PK, Composite FK)" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-120">
+          <mxGeometry y="46" width="280" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-123" value="SectionID: INT (Composite PK, Composite FK)" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-120">
+          <mxGeometry y="72" width="280" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-124" value="TopicID: INT (Composite PK, Composite FK)" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-120">
+          <mxGeometry y="98" width="280" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-125" value="CompetitionID: INT (Composite PK, Composite FK)" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-120">
+          <mxGeometry y="124" width="280" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-126" value="UserID: INT (Composite PK, FK)" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-120">
+          <mxGeometry y="150" width="280" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-127" value="RoundStatus: INT" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-120">
+          <mxGeometry y="176" width="280" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-128" value="RoundScore: INT" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-120">
+          <mxGeometry y="202" width="280" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-129" value="RoundTime: INT" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-120">
+          <mxGeometry y="228" width="280" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-130" value="CreatedDate: DATE" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-120">
+          <mxGeometry y="254" width="280" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-131" value="UpdatedDate: DATE" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-120">
+          <mxGeometry y="280" width="280" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-132" value="Authentication Table" style="swimlane;startSize=20;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-1">
+          <mxGeometry x="40" y="-1040" width="200" height="124" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-133" value="UserID: INT (PK)" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-132">
+          <mxGeometry y="20" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-134" value="PasswordHash: VARCHAR" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-132">
+          <mxGeometry y="46" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-135" value="PasswordSalt: VARCHAR" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-132">
+          <mxGeometry y="72" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="aL5RLeebEqvUCbHwp5d0-136" value="Status: INT" style="text;html=1;strokeColor=default;fillColor=none;" vertex="1" parent="aL5RLeebEqvUCbHwp5d0-132">
+          <mxGeometry y="98" width="200" height="26" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
