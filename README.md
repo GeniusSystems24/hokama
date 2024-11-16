@@ -1,353 +1,668 @@
-# Future Sages
-[اللغة العربية](/arabic/README.md)
-## Database
-![database diagram](/image/digram-ERD.svg)
-### List of Tables
-1. [Authentication Table](#authentication-table): Stores authentication information for users, including user ID and encrypted password.
-2. [User Table](#user-table): Contains data of users registered in the system.
-3. [Entity Table](#entity-table): Stores information about various entities, such as schools or departments, including managers and contact information.
-4. [Student Table](#student-table): Contains data of registered students, including basic contact information.
-5. [EntityStudent Table](#entitystudent-table): Stores information about the association of students with entities, allowing assignment of students to specific entities.
-6. [Group Table](#group-table): Stores information about groups within entities and allows assignment of managers to the group.
-7. [GroupMember Table](#groupmember-table): Stores the relationships between students and groups to which they belong, allowing a student to belong to multiple groups.
-8. [Domain Table](#domain-table): Includes main domains or categories (e.g., Family, Education).
-9. [Section Table](#section-table): Contains subsections belonging to the main domains.
-10. [Topic Table](#topic-table): Contains topics within each section.
-11. [Competition Table](#competition-table): Contains competition data, including questions, time, and stages.
-12. [UserRound Table](#userround-table): Rounds user Round in domains, sections, and topics.
-13. [Plan Table](#plan-table): Stores information about available subscription plans, including the number of allowed groups and students, and validity duration.
-14. [Subscription Table](#subscription-table): Stores subscription information for entities, including the package of available features such as the number of groups and students.
-15. [SubscriptionPayment Table](#subscriptionpayment-table): Stores information about payments related to subscriptions, including payment date, amount, and payment status.
+## نبذة عن المشروع
+### ماذا نريد بناءه؟
 
-### Table Structures
+نسعى إلى بناء منصة تعليمية رقمية متكاملة تُحدث نقلة نوعية في إدارة العملية التعليمية، وتوفير أدوات مرنة وشاملة تدعم جميع الأطراف المعنية، من الطلاب والمعلمين إلى الإداريين والمؤسسات التعليمية. يهدف المشروع إلى تصميم نظام حاسوبي متطور يقدم حلولاً مبتكرة لإدارة وتنظيم المحتوى التعليمي، مع تمكين التفاعل والتخصيص بما يتناسب مع احتياجات المستخدمين المختلفة.
 
-#### **Authentication Table**
-- **Description**: Stores authentication information for users, including user ID and encrypted password.
+### ما الاهداف التي نريد تحقيقها من خلال المنصة؟
+1. **إدارة شاملة وفعالة**:
+   - تنظيم وإدارة الطلاب، المجموعات، والمجالات التعليمية بسهولة.
+   - تقديم واجهات استخدام مرنة تدعم المؤسسات التعليمية بمختلف أحجامها.
 
-![alt text](/image/Authentication.svg)
-- **Columns**:
-    - `UserID`: Unique user ID (INT) `Primary key`
-    - `PasswordHash`: Encrypted password hash (VARCHAR)
-    - `PasswordSalt`: Password salt used in hashing (VARCHAR)
-    - `Status`: User status (INT), such as 1 for "Active", 0 for "Inactive"
+2. **تعزيز العملية التعليمية**:
+   - تمكين الطلاب من الوصول إلى محتوى تعليمي مخصص.
+   - تصميم أدوات تفاعلية مثل المسابقات والاختبارات التي تعزز المشاركة والفهم.
 
-- **Operations**:
-    - **Add** new authentication data
-    - **Edit** encrypted password
-    - **Delete** authentication data
-    - **View** authentication data for users
+3. **متابعة الأداء وتحليل البيانات**:
+   - توفير تقارير دقيقة ومباشرة عن أداء الطلاب والجماعات التعليمية.
+   - مساعدة الجهات التعليمية على اتخاذ قرارات مستنيرة لتحسين العملية التعليمية.
 
-#### **User Table**
-- **Description**: Contains data of users registered in the system.
+4. **توفير تجربة مستخدم متكاملة**:
+   - تقديم منصة تدعم تسجيل الدخول المتعدد (طلاب، معلمين، إداريين).
+   - سهولة التفاعل مع المحتوى التعليمي والأنشطة من أي مكان.
 
-![alt text](/image/user.svg)
-- **Columns**:
-    - `UserID`: Unique user ID (INT) `Primary key & Foreign key`
-    - `UserName`: Full name of the user (VARCHAR)
-    - `UserImage`: Link to the user's image (VARCHAR)
-    - `UserPhone`: Mobile number (VARCHAR)
-    - `UserEmail`: Email address (VARCHAR)
-    - `UserGender`: Gender (VARCHAR)
-    - `UserBirthdate`: Birthdate (DATE)
-    - `UserRank`: User rank or type (VARCHAR), such as "Admin", "Student", "Supervisor"
-    - `Status`: User status (INT), such as 1 for "Active", 0 for "Inactive"
-    - `CreatedDate`: Record creation date (DATE)
-    - `UpdatedDate`: Last record update date (DATE)
+5. **تخصيص النظام**:
+   - إتاحة خيارات متنوعة لتخصيص المنصة بناءً على احتياجات الجهة التعليمية أو الطالب.
+   - تقديم باقات اشتراك مرنة تشمل ميزات متنوعة تناسب مختلف المستخدمين.
 
-- **Operations**:
-    - **Add** a new user
-    - **Edit** user data
-    - **Delete** a user
-    - **View** the list of users
+6. **تمكين الشمولية والمرونة**:
+   - توفير حلول تعليمية تناسب المؤسسات الصغيرة والمتوسطة والكبيرة.
+   - دعم المعلمين والطلاب في إنشاء بيئة تعليمية متكاملة وشاملة.
 
-#### **Entity Table**
-- **Description**: Stores information about various entities, such as schools or departments, including managers and contact information.
+**خلاصة:**
+بناءً على هذه الأهداف، سيتم تصميم المنصة لتكون أداة فعالة تدعم المؤسسات التعليمية في تحقيق أهدافها الأكاديمية والإدارية بكفاءة عالية.
 
-![alt text](/image/Entity.svg)
-- **Columns**:
-    - `EntityID`: Unique entity ID (INT) `Primary key`
-    - `EntityName`: Name of the entity (VARCHAR)
-    - `ManagerID`: Manager's ID (VARCHAR) `Foreign key`
-    - `EntityPhone`: Entity's mobile number (VARCHAR)
-    - `EntityEmail`: Entity's email address (VARCHAR)
-    - `EntityImage`: Link to the entity's image (VARCHAR)
-    - `Status`: Entity status (INT), such as 1 for "Active", 0 for "Inactive"
-    - `CreatedDate`: Record creation date (DATE)
-    - `UpdatedDate`: Last record update date (DATE)
-    
-- **Operations**:
-    - **Add** a new entity
-    - **Edit** entity data
-    - **Delete** an entity
-    - **View** the list of entities
+---
 
-#### **Student Table**
-- **Description**: Contains data of registered students, including basic contact information.
+### الأدوات التي توفرها المنصة التعليمية
+![alt text](images/المنصة.svg)
 
-![alt text](/image/Student.svg)
-- **Columns**:
-    - `StudentID`: Unique student ID (INT) `Primary key & Foreign key`
-    - `StudentName`: Full name of the student (VARCHAR)
-    - `StudentPhone`: Mobile number (VARCHAR)
-    - `StudentEmail`: Email address (VARCHAR)
-    - `Status`: Student status (INT), such as 1 for "Active", 0 for "Inactive"
-    - `CreatedDate`: Record creation date (DATE)
-    - `UpdatedDate`: Last record update date (DATE)
-    
-- **Operations**:
-    - **Add** a new student
-    - **Edit** student data
-    - **Delete** a student
-    - **View** the list of students based on the group
+#### أولاً: أدوات مسؤول المنصة
+مسؤول المنصة هو المشرف الأعلى الذي يتحكم في إعداد النظام وإدارته بشكل شامل. تشمل الأدوات المتاحة له ما يلي:
 
-#### **EntityStudent Table**
-- **Description**: Stores information about the association of students with entities, allowing assignment of students to specific entities.
 
-![alt text](/image/EntityStudent.svg)
-- **Columns**:
-    - `EntityID`: Entity ID (INT) `Primary key`
-    - `StudentID`: Student ID (INT)
-    - `Status`: Association status (INT), 1 for "Active", 0 for "Inactive"
-    - `CreatedDate`: Record creation date (DATE)
-    - `UpdatedDate`: Last record update date (DATE)
+**1. إدارة النظام والبنية العامة**
+- **إعداد الباقات**:
+  - إنشاء وإدارة باقات الاشتراك للجهات وتحديد حدود الباقات (عدد الطلاب، المجموعات، المعلمين، المميزات المتاحة).
+  - إنشاء وإدارة باقات الاشتراك للافراد وتحديد حدود الباقات (المميزات المتاحة).
+- **إدارة التراخيص**:
+  - تفعيل أو إيقاف صلاحيات الجهات أو المستخدمين.
 
-- **Operations**:
-    - **Add** a new association between a student and an entity
-    - **Edit** the status of the association
-    - **Delete** an existing association
-    - **View** the list of students associated with a particular entity
-    - **View** the entities associated with a particular student
 
-#### **Group Table**
-- **Description**: Stores information about groups within entities and allows assignment of managers to the group.
+**2. إدارة المحتوى التعليمي**
+- **إنشاء المحتوى**:
+  - إنشاء محتوى المنصة (مجالات, مواضيع, ومسابقات).
+- **تحديث المحتوى**:
+  - تعديل وإدارة المحتوى.
+- **إنشاء المسابقات**:
+  - إعداد مسابقات تفاعلية تشمل أسئلة مخصصة.
 
-![alt text](/image/Group.svg)
-- **Columns**:
-    - `EntityID`: Entity ID to which the group belongs (INT) `Composite primary key & Foreign key`
-    - `GroupID`: Unique group ID (INT) `Composite primary key`
-    - `GroupName`: Name of the group (VARCHAR)
-    - `GroupImage`: Link to the group's image (VARCHAR)
-    - `Status`: Group status (INT), such as 1 for "Active", 0 for "Inactive"
-    - `CreatedDate`: Record creation date (DATE)
-    - `UpdatedDate`: Last record update date (DATE)
-    
-- **Operations**:
-    - **Add** a new group
-    - **Edit** group data
-    - **Delete** a group
-    - **View** the list of groups based on the entity
+**3. إدارة الجهات**
+- **إنشاء حسابات الجهات**:
+  - إضافة جهات جديدة وتخصيص باقة الاشتراك لكل جهة.
+- **متابعة نشاط الجهات**:
+  - تتبع استخدام الجهات للنظام ومراجعة مدى التزامها بالباقات.
+- **توفير الدعم**:
+  - أدوات لتقديم الدعم الفني والإجابة على استفسارات مسؤول الجهة.
 
-#### **GroupMember Table**
-**Summary**: This table stores the relationships between students and groups to which they belong, allowing a student to belong to multiple groups.
 
-![alt text](/image/GroupMember.svg)
-- **Columns**:
-    - `EntityID`: Entity ID to which the group belongs (INT) `Composite Foreign key`
-    - `GroupID`: Group ID (INT) `Composite Foreign key`
-    - `MemberID`: Member ID `User` (INT) `Foreign key`
-    - `LinkID`: Unique link ID (INT) `Primary key`
-    - `Rank`: User rank or type (VARCHAR), such as "Admin", "Student", "Supervisor"
-    - `Status`: Association status (INT), such as 1 for "Active", 0 for "Inactive"
-    - `CreatedDate`: Record creation date (DATE)
-    - `UpdatedDate`: Last record update date (DATE)
-    
-- **Operations**:
-    - **Add** a new association between a member and a group
-    - **Edit** the association
-    - **Delete** an association
-    - **View** the list of groups associated with each member
-    - **View** the list of members associated with each group
-        
-#### **Domain Table**
-- **Description**: Includes main domains or categories (e.g., Family, Education).
+**4. إدارة المستخدمين العامة**
+- **إدارة حسابات المسؤولين**:
+  - إنشاء حسابات مسؤولين جهات ومنحهم الصلاحيات.
+  - متابعة نشاط الحسابات وضمان استخدامها بشكل صحيح.
+- **إعداد الصلاحيات**:
+  - تخصيص صلاحيات محددة لكل مسؤول جهة وفقًا لاحتياجاتها.
 
-![alt text](/image/Domain.svg)
-- **Columns**:
-    - `EntityID`: Entity ID to which the group belongs (INT) `Composite primary key & Foreign key`
-    - `DomainID`: Unique domain ID (INT) `Composite primary key`
-    - `DomainName`: Name of the domain (VARCHAR)
-    - `DomainImage`: Link to the domain's image (VARCHAR)
-    - `DomainOrder`: Order of the domain (INT)
-    - `Status`: Domain status (INT), such as 1 for "Active", 0 for "Inactive"
-    - `CreatedDate`: Record creation date (DATE)
-    - `UpdatedDate`: Last record update date (DATE)
-    
-- **Operations**:
-    - **Add** a new domain
-    - **Edit** domain data
-    - **Delete** a domain
-    - **View** the list of domains in a specific order
-        
-#### **Section Table**
-- **Description**: Contains subsections belonging to the main domains.
 
-![alt text](/image/Section.svg)
-- **Columns**:
-    - `EntityID`: Entity ID to which the group belongs (INT) `Composite primary key & Composite Foreign key`
-    - `DomainID`: Unique domain ID (INT) `Composite primary key & Composite Foreign key`
-    - `SectionID`: Unique section ID (INT) `Composite primary key`
-    - `SectionSerialNumber`: Unique serial Number (UniqueIdentifier) `Secondray primary key`
-    - `SectionName`: Name of the section (VARCHAR)
-    - `SectionImage`: Link to the section's image (VARCHAR)
-    - `SectionOrder`: Order of the section within the domain (INT)
-    - `Status`: Section status (INT), such as 1 for "Active", 0 for "Inactive"
-    - `CreatedDate`: Record creation date (DATE)
-    - `UpdatedDate`: Last record update date (DATE)
-    
-- **Operations**:
-    - **Add** a new section
-    - **Edit** section data
-    - **Delete** a section
-    - **View** the list of sections based on the domain
-        
-#### **Topic Table**
-- **Description**: Contains topics within each section.
+**5. إدارة البيانات والتقارير**
+- **تتبع الأداء العام**:
+  - الحصول على تقارير شاملة حول نشاط الجهات، المستخدمين، والطلاب.
+- **إدارة النسخ الاحتياطية**:
+  - إعداد نسخ احتياطية دورية للبيانات وحمايتها من الضياع.
 
-![alt text](/image/Topic.svg)
-- **Columns**:
-    - `EntityID`: Entity ID to which the group belongs (INT) `Composite primary key & Composite Foreign key`
-    - `DomainID`: Unique domain ID (INT) `Composite primary key & Composite Foreign key`
-    - `SectionID`: Unique section ID (INT) `Composite primary key & Composite Foreign key`
-    - `TopicID`: Unique topic ID (INT) `Composite primary key`
-    - `TopicSerialNumber`: Unique serial Number (UniqueIdentifier) `Secondray primary key`
-    - `TopicName`: Name of the topic (VARCHAR)
-    - `TopicImage`: Link to the topic's image (VARCHAR)
-    - `TopicOrder`: Order of the topic within the section of domain (INT)
-    - `Status`: Topic status (INT), such as 1 for "Active", 0 for "Inactive"
-    - `CreatedDate`: Record creation date (DATE)
-    - `UpdatedDate`: Last record update date (DATE)
-    
-- **Operations**:
-    - **Add** a new topic
-    - **Edit** topic data
-    - **Delete** a topic
-    - **View** the list of topics based on the section
-        
-        
-#### **Competition Table**
-- **Description**: Contains competition data, including questions, time, and stages.
 
-![alt text](/image/Competition.svg)
-- **Columns**:
-    - `EntityID`: Entity ID to which the group belongs (INT) `Composite primary key & Composite Foreign key`
-    - `DomainID`: Unique domain ID (INT) `Composite primary key & Composite Foreign key`
-    - `SectionID`: Unique section ID (INT) `Composite primary key & Composite Foreign key`
-    - `TopicID`: Unique topic ID (INT) `Composite primary key & Composite Foreign key`
-    - `CompetitionID`: Unique competition ID (INT) `Composite primary key`
-    - `CompetitionSerialNumber`: Unique serial Number (UniqueIdentifier) `Secondray primary key`
-    - `CompetitionName`: Name of the competition (VARCHAR)
-    - `CompetitionTimeLimit`: Time limit (INT)
-    - `CompetitionQuestionsCount`: Number of questions (INT)
-    - `CompetitionStagesCount`: Number of stages (INT)
-    - `CompetitionStages`: stages with there info and questions (Json) 
-    - `CompetitionImage`: Link to the competition's image (VARCHAR)
-    - `CompetitionEnrichmentText`: Link to enrichment text (VARCHAR)
-    - `CompetitionIsWithSound`: is Competition With Sound or Not (Bit)
-    - `Status`: Competition status (INT), such as 1 for "Active", 0 for "Inactive"
-    - `CreatedDate`: Record creation date (DATE)
-    - `UpdatedDate`: Last record update date (DATE)
-    
-- **Operations**:
-    - **Add** a new competition
-    - **Edit** competition data
-    - **Delete** a competition
-    - **View** the list of competitions
-        
-#### **UserRound Table**
-- **Description**: Rounds user Round in competitions.
+**6. أدوات الأمان**
+- **ضمان حماية البيانات**:
+  - تطبيق سياسات أمان صارمة مثل التشفير وإدارة الوصول.
+- **إدارة سجلات النشاط**:
+  - مراقبة أنشطة المستخدمين على مستوى الجهة لضمان الامتثال.
 
-![alt text](/image/UserRound.svg)
-- **Columns**:
-    - `EntityID`: Entity ID to which the group belongs (INT) `Composite primary key & Composite Foreign key`
-    - `DomainID`: Unique domain ID (INT) `Composite primary key & Composite Foreign key`
-    - `SectionID`: Unique section ID (INT) `Composite primary key & Composite Foreign key`
-    - `TopicID`: Unique topic ID (INT) `Composite primary key & Composite Foreign key`
-    - `CompetitionID`: Unique competition ID (INT)  `Composite primary key & Composite Foreign key`
-    - `UserID`: User ID (INT) `Composite primary key & Foreign key`
-    - `RoundSerialNumber`: Unique serial Number (UniqueIdentifier) `Secondray primary key`
-    - `Score`: Earned score (FLOAT)
-    - `Status`: Record status (INT), such as 1 for "Active", 0 for "Inactive"
-    - `CreatedDate`: Record creation date (DATE)
-    - `UpdatedDate`: Last record update date (DATE)
-    
-- **Operations**:
-    - **Add** a new Round record
-    - **Edit** user Round
-    - **Delete** a Round record
-    - **View** user Round in specific domains
-        
+---
 
-#### **Plan Table**
-- **Description**: Stores information about available subscription plans, including the number of allowed groups and students, and validity duration.
 
-![alt text](/image/Plan.svg)
-- **Columns**:
-    - `PlanID`: Unique plan ID (INT) `primary key`
-    - `PlanName`: Name of the plan (VARCHAR), such as "Basic Plan", "Premium Plan"
-    - `AllowedGroup`: Maximum allowed number of groups (INT)
-    - `AllowedStudent`: Maximum allowed number of students (INT)
-    - `Duration`: Validity duration (VARCHAR), such as "Month", "Year"
-    - `Price`: Subscription price (DECIMAL)
-    - `Description`: Brief description about the plan (TEXT)
-    - `Status`: Plan status (INT), such as 1 for "Available", 0 for "Unavailable"
-    - `CreatedDate`: Record creation date (DATE)
-    - `UpdatedDate`: Last record update date (DATE)
-    
-- **Operations**:
-    - **Add** a new plan
-    - **Edit** plan data
-    - **Delete** a plan
-    - **View** the list of available plans
-        
-#### **Subscription Table**
-- **Description**: Stores subscription information for entities, including the package of available features such as the number of groups and students.
+#### ثانياً: أدوات مسؤول الجهة
+مسؤول الجهة هو الشخص المكلف بإدارة العملية التعليمية داخل مؤسسته باستخدام المنصة **قد يكون اكثر من مسؤول للجهة**.
+تشمل الأدوات المتاحة له ما يلي :
 
-![alt text](/image/Subscription.svg)
-- **Columns**:
-    - `SubscriptionID`: Unique subscription ID (INT) `primary key`
-    - `PlanID`: Plan ID (INT) `foreign key`
-    - `EntityID`: Entity ID (INT) `foreign key`
-    - `StartDate`: Subscription start date (DATE)
-    - `EndDate`: Subscription end date (DATE)
-    - `SubscriptionStatus`: Subscription status (VARCHAR), such as "Active", "Expired"
-    - `Status`: Record status (INT), such as 1 for "Active", 0 for "Inactive"
-    - `CreatedDate`: Record creation date (DATE)
-    - `UpdatedDate`: Last record update date (DATE)
-    
-- **Operations**:
-    - **Add** a new subscription
-    - **Edit** subscription data
-    - **Cancel** a subscription
-    - **View** the list of subscriptions for entities
-        
-- **Use Cases**:
-    - When **adding a new entity**, a default subscription should be created for it.
-    - When **editing an entity**, its subscription information can be modified.
-    - When **deleting an entity**, the associated subscription should be deleted.
-    - Ensure that the number of groups and students does not exceed the allowed limits in the subscription.
-        
-#### **SubscriptionPayment Table**
-- **Description**: Stores information about payments related to subscriptions, including payment date, amount, and payment status.
+**1. إدارة الحسابات المحلية**
+- **إضافة المستخدمين**:
+  - إنشاء حسابات للطلاب والمعلمين وربطهم بالمجموعات.
+  - إدارة صلاحيات المعلمين داخل الجهة.
+- **إدارة المجموعات**:
+  - إضافة المجموعات التعليمية وربطها بالطلاب والمعلمين.
+  - تنظيم توزيع الطلاب حسب المجالات الدراسية.
 
-![alt text](/image/SubscriptionPayment.svg)
-- **Columns**:
-    - `PaymentID`: Unique payment ID (INT) `primary key`
-    - `SubscriptionID`: Associated subscription ID (INT) `foreign key`
-    - `PaymentDate`: Date of payment (DATE)
-    - `Amount`: Amount paid (DECIMAL)
-    - `PaymentMethod`: Payment method (VARCHAR), such as "Credit Card", "Bank Transfer"
-    - `PaymentStatus`: Payment status (VARCHAR), such as "Paid", "Pending", "Canceled"
-    - `TransactionID`: Transaction number from the payment system (VARCHAR)
-    - `Status`: Payment status (INT), such as 1 for "Active", 0 for "Inactive"
-    - `CreatedDate`: Record creation date (DATE)
-    - `UpdatedDate`: Last record update date (DATE)
-    
-- **Operations**:
-    - **Add** a new payment
-    - **Edit** payment data
-    - **Delete** a payment
-    - **View** the list of payments related to subscriptions
 
-## User Interfaces
-### WireFrame diagram
-![WireFrame diagram image](/image/31d543109869851.5fdda2da34e98.png)
+**2. إدارة المحتوى التعليمي**
+- **تخصيص المحتوى**:
+  - تخصيص محتوى **مقرر** المجموعات من (مجالات, مواضيع, ومسابقات).
+- **تحديث المحتوى**:
+  - تعديل وإدارة المحتوى وفقًا للمناهج أو احتياجات الجهة.
+- **إنشاء المسابقات**:
+  - إعداد مسابقات تفاعلية تشمل أسئلة مخصصة.
+
+
+**3. تتبع تقدم الطلاب**
+- **متابعة أداء الطلاب**:
+  - عرض تقارير تفصيلية حول تقدم الطلاب في المجالات التعليمية.
+- **إدارة التقييمات**:
+  - مراجعة نتائج التمارين والمسابقات لتحديد نقاط الضعف والقوة.
+- **إعادة تخصيص الأنشطة**:
+  - اقتراح إعادة دراسة موضوعات معينة لتحسين أداء الطلاب.
+
+
+**4. التواصل مع الطلاب والمعلمين**
+- **إرسال الإشعارات**:
+  - تنبيه الطلاب بالمسابقات أو المواعيد النهائية للأنشطة.
+  - تقديم ملاحظات للمعلمين حول أداء الطلاب.
+- **إعداد الاجتماعات**:
+  - تنظيم لقاءات افتراضية أو ورش عمل ضمن المنصة.
+  **ضمن المراحل المستقبلية**
+
+**5. إدارة التقارير المحلية**
+- **عرض التقارير التفصيلية**:
+  - تحليل أداء الطلاب والمجموعات.
+  - إنشاء تقارير خاصة لإدارة المؤسسة.
+
+
+**6. طلب الدعم الفني**
+- **التواصل مع مسؤول المنصة**:
+  - تقديم طلبات للدعم الفني أو الإبلاغ عن مشاكل تقنية.
+- **طلب ميزات إضافية**:
+  - اقتراح تطوير النظام وفقًا لاحتياجات الجهة.
+
+---
+
+#### ثالثاً: أدوات الطالب
+الطالب هو المستخدم النهائي الذي يستفيد من المحتوى والأنشطة التعليمية. تشمل الأدوات:
+
+
+**1. أدوات الوصول إلى المحتوى**
+- تصفح المجالات التعليمية، الأقسام، والمواضيع المتاحة.
+- الوصول إلى التمارين، الفيديوهات، والمحتوى التفاعلي.
+
+
+**2. أدوات التقييم والتفاعل**
+- المشاركة في التمارين والمسابقات وتقديم الإجابات.
+- تلقي نتائج التمارين وتحليل أدائه الشخصي.
+- تلقي إشعارات حول الأنشطة والمواعيد النهائية.
+
+
+**3. أدوات تتبع التقدم**
+- عرض شريط التقدم الذي يظهر مستواه في المواضيع المختلفة.
+- تقارير أداء توضح النقاط التي تحتاج إلى تحسين.
+- عرض نسبة التقدم في الأنشطة والمجالات.
+
+
+**4. أدوات المراجعة والتطوير**
+- تلقي توصيات من النظام لتحسين الأداء في المواضيع الضعيفة.
+- إمكانية طلب إعادة دراسة موضوع معين.
+
+
+**5. أدوات الدعم والتواصل**
+- التفاعل مع المعلمين للحصول على توجيهات.
+- إرسال استفسارات عبر النظام.
+
+---
+
+### ملخص الفرق بين الأدوات
+
+| **الأدوات**                     | **مسؤول المنصة**                              | **مسؤول الجهة**                              | **الطالب**                                   |
+|---------------------------------|---------------------------------------------|---------------------------------------------|---------------------------------------------|
+| **إدارة الحسابات**              | إنشاء الجهات وتخصيص الصلاحيات              | إنشاء الطلاب والمعلمين والمجموعات          | التسجيل في النظام وإنشاء الحساب الشخصي       |
+| **إدارة الباقات**               | إعداد الباقات والاشتراكات                   | اختيار الباقة المناسبة للجهة                | اختيار باقة فردية                                   |
+| **إدارة المحتوى**               | إنشاء وتعديل محتوى المنصة                         | تخصيص محتوى مجموعات الجهة            | الوصول إلى المحتوى المتاح فقط               |
+| **إدارة التقارير**              | تقارير شاملة عن أداء الجهات                 | تقارير تفصيلية عن أداء الطلاب والمجموعات    | عرض تقارير التقدم الشخصي وأداء التمارين      |
+| **التقييم والمسابقات**          | مراقبة النشاط العام للمسابقات              | إعداد المسابقات ومراجعة نتائج الطلاب         | المشاركة في التمارين والمسابقات             |
+| **الدعم الفني**                 | توفير الدعم الفني لجميع الجهات              | طلب الدعم الفني وحل المشاكل الخاصة بالجهة    | طلب المساعدة من المعلمين داخل المنصة         |
+| **إدارة البيانات**              | النسخ الاحتياطي والتحكم الكامل بالنظام       | إدارة بيانات الطلاب والمعلمين داخل الجهة   | استعراض بيانات التقدم الشخصي والأنشطة        |
+| **التفاعل والتواصل**            | التواصل مع مسؤولي الجهات                   | إرسال إشعارات وتنبيهات للطلاب والمعلمين      | التفاعل مع المعلمين واستلام الإشعارات        |
+
+
+### تفاصيل إضافية
+
+- **مسؤول المنصة**: يركز على إدارة النظام والبنية الأساسية للمنصة، بما في ذلك إعداد الباقات و المحتوى التعليمي وتخصيص الصلاحيات.
+- **مسؤول الجهة**: يتحكم في إدارة الطلاب والمعلمين داخل مؤسسته، مع مسؤولية تخصيص المحتوى وتتبع الأداء.
+- **الطالب**: يستخدم المنصة للتعلم من خلال الوصول إلى المحتوى، المشاركة في الأنشطة، وتتبع تقدمه الشخصي.
+
+---
+
+## باقات الاشتراك المقترحة
+
+### 1. باقات اشتراك خاصة بالطلاب 
+**اشتراكات فردية**
+
+ **الباقات المقترحة للطلاب**
+
+| الباقة              | السعر الشهري (بالريال السعودي) | الميزات الرئيسية                                     | الجمهور المستهدف                              |
+|---------------------|-------------------------|------------------------------------------------------|-----------------------------------------------|
+| **الأساسية**       | 5-10                    | الوصول الأساسي للمحتوى وتتبع محدود                   | الطلاب الجدد أو المستكشفين للنظام             |
+| **المتوسطة**       | 15-20                   | الوصول الكامل للمواد، تمارين غير محدودة، تتبع مفصل   | الطلاب المتعلمين بعمق                         |
+| **المتقدمة**       | 30-40                   | خطط دراسية شخصية، توصيات للتحسين                     | الطلاب الطموحين المهتمين بالتحسين المستمر     |
+| **المحترفين**      | 50-70                   | محتوى متميز، شارات وإنجازات، تقارير أداء شاملة       | الطلاب المتفوقون والمتطلعون لتجربة شاملة     |
+| **التميز**         | 100-150                 | تخصيص كامل، دعم استشاري، ورش عمل افتراضية           | الطلاب الذين يسعون لتحقيق أداء تعليمي استثنائي|
+
+---
+
+### 2. باقات اشتراك خاصة بالجهات
+**باقات للمؤسسات التعليمية**
+
+**أسعار الباقات المقترحة للجهات**
+
+| الباقة                | السعر الشهري (بالريال السعودي) | عدد الطلاب | عدد المجموعات | عدد المعلمين | الميزات الرئيسية                                                                                             | الجمهور المستهدف                                      |
+|-----------------------|-------------------------|-------------|----------------|--------------|--------------------------------------------------------------------------------------------------------------|-------------------------------------------------------|
+| **الباقة الأساسية**   | 50-100                  | حتى 50      | حتى 3          | 1            | وصول كامل إلى المحتوى، تتبع التقدم في المجالات الرئيسية فقط، دعم فني عبر البريد الإلكتروني.          | الجهات الصغيرة أو المدارس المبتدئة.                  |
+| **الباقة المتقدمة**   | 150-200                 | حتى 150     | حتى 10         | 3            | وصول كامل إلى المحتوى، تتبع الأداء بتفاصيل أكثر، تخصيص المحتوى وإنشاء مسابقات، دعم عبر البريد الإلكتروني. | المؤسسات المتوسطة الحجم التي تحتاج إلى إدارة موسعة. |
+| **الباقة الاحترافية** | 300-500                 | حتى 300     | حتى 20         | 6            | وصول كامل إلى المحتوى، تقارير أداء شاملة، إشعارات تلقائية للطلاب والمعلمين، دعم فني عبر الهاتف والبريد.    | المدارس والمؤسسات التعليمية الكبيرة.                |
+| **باقة المؤسسات**     | 700-1000                | حتى 1000    | حتى 50         | 20           | ميزات كاملة لإدارة المحتوى، تقارير تحليلية متقدمة، تخصيص النظام ودمجه مع أنظمة خارجية، دعم فني مستمر.        | المؤسسات التعليمية والشركات الكبيرة.                 |
+| **باقة التميز**       | 1500-2000               | حتى 2000    | حتى 100        | 50           | تخصيص كامل للنظام، خطة مراجعة شخصية، تقارير مفصلة، دعم خاص واستشارات تعليمية، حضور ورش عمل.               | الجامعات والمؤسسات التعليمية الموسعة.               |
+
+
+**جدول ملخص لميزات باقات الجهات**
+
+| الباقة                | عدد الطلاب | عدد المجموعات | عدد المعلمين | ميزات المحتوى                                      | ميزات التتبع والتقارير                           | دعم فني                       | الفئات المستهدفة                               |
+|-----------------------|------------|---------------|--------------|---------------------------------------------------|--------------------------------------------------|--------------------------------|------------------------------------------------|
+| **الباقة الأساسية**   | حتى 50     | حتى 3        | 1            | الوصول الكامل إلى جميع المحتويات                        | تتبع تقدم الطالب في المجالات الرئيسية فقط         | بريد إلكتروني فقط              | الجهات الصغيرة أو المدارس المبتدئة             |
+| **الباقة المتقدمة**   | حتى 150    | حتى 10       | 3            | الوصول الكامل، مع إمكانية تخصيص محتوى المجموعات (مجالات)               | تتبع مفصل للتقدم يشمل المجالات والأقسام الفرعية   | بريد إلكتروني سريع             | المؤسسات المتوسطة الحجم                         |
+| **الباقة الاحترافية** | حتى 300    | حتى 20       | 6            | الوصول الكامل، مع إمكانية تخصيص محتوى المجموعات (مجالات ومسابقات)                  | تقارير أداء شاملة على مستوى الطالب والمجموعات    | بريد إلكتروني وهاتف خلال ساعات العمل | المدارس والمؤسسات الكبيرة                       |
+| **باقة المؤسسات**     | حتى 1000   | حتى 50       | 20           | الوصول الكامل، مع إمكانية تخصيص محتوى المجموعات           | تقارير تحليلية متقدمة مع تتبع مستمر              | دعم فني متواصل                 | المؤسسات التعليمية والشركات الكبيرة             |
+| **باقة التميز**       | حتى 2000   | حتى 100      | 50           | تخصيص كامل للمحتوى وإنشاء خطط دراسية خاصة         | تقارير مفصلة، وإشراف مخصص لتحسين الأداء          | دعم فني واستشارات تعليمية خاصة  | الجامعات والمؤسسات التعليمية الموسعة            |
+
+
+### منصات مشابهة تقدم باقات متعددة
+
+ **أمثلة على منصات تعليمية تقدم باقات اشتراك مماثلة**
+
+| المنصة                               | الباقات الرئيسية                                    | تفاصيل الباقات                                                                                                                         |
+|--------------------------------------|-----------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+| **Google Workspace for Education**    | Education Fundamentals، Education Standard، ...     | تتراوح من مجانية إلى باقات مدفوعة تشمل ميزات إضافية للأمان وإدارة البيانات وتحليل الأداء.                                              |
+| **Microsoft Teams for Education**     | Office 365 A1، Office 365 A3، Office 365 A5         | الباقات تتفاوت في دعم ميزات الأمان، وتحليل الأداء، والوصول الكامل إلى أدوات Microsoft.                                                |
+| **Kahoot! for Schools**               | Basic، Pro، Premium، Premium+                       | من باقة مجانية إلى باقات مدفوعة بميزات إضافية للتفاعل وإدارة المحتوى وتحليل الأداء.                                                     |
+| **Canvas LMS**                        | Basic، Advanced، Enterprise                         | تشمل باقات للتعليم الأساسي والمتوسط، وتتيح تخصيص كامل للجامعات والمؤسسات الكبيرة.                                                      |
+| **Schoology by PowerSchool**          | Basic، Enterprise                                  | توفر باقات مع ميزات إدارة المحتوى، تقارير الأداء، ودعم للتكامل مع الأنظمة الأخرى.                                                      |
+| **Moodle for Education and Corporates** | Standard، Professional، Enterprise                 | تشمل الباقات ميزات تخصيص النظام، وإدارة المستخدمين، وتحليل الأداء، وتلائم المدارس والشركات الكبيرة.                                   |
+
+---
+
+## عمليات المنصة
+### عمليات مسؤول النظام (مسؤول المنصة)
+
+**مسؤول النظام** هو الشخص الذي يدير البنية التحتية للمنصة ويضمن تشغيلها بكفاءة. العمليات الرئيسية ومسار تنفيذ كل عملية كالتالي:
+
+
+#### 1. إدارة النظام والبنية العامة
+
+**أ. إعداد الباقات**
+
+**الهدف**: إنشاء وإدارة باقات الاشتراك للجهات والأفراد، وتحديد حدود وميزات كل باقة.
+
+**خطوات العملية**:
+
+1. **تسجيل الدخول**:
+   - **المسؤول** يقوم بتسجيل الدخول إلى لوحة التحكم الخاصة بالنظام.
+
+2. **الوصول إلى إدارة الباقات**:
+   - ينتقل إلى قسم **"إدارة الباقات"** في القائمة الرئيسية.
+
+3. **إنشاء باقة جديدة**:
+   - ينقر على زر **"إنشاء باقة جديدة"**.
+   - يحدد نوع الباقة (جهة أو فردية).
+   - يدخل التفاصيل:
+     - **اسم الباقة**.
+     - **السعر الشهري**.
+     - **الميزات المتاحة** (عدد الطلاب، المجموعات، المعلمين، المميزات الخاصة).
+
+4. **تحديد الحدود والصلاحيات**:
+   - يحدد **الحد الأقصى للمستخدمين** والموارد المسموح بها في الباقة.
+   - يخصص **الصلاحيات** المتاحة للمستخدمين ضمن الباقة.
+
+5. **حفظ وتفعيل الباقة**:
+   - ينقر على **"حفظ"**.
+   - يتأكد من **تفعيل الباقة** لتصبح متاحة للاختيار من قبل الجهات أو الأفراد.
+
+**مخطط تسلسلي Sequence Diagram**:
+
+![alt text](images/1.1.1.svg)
+
+---
+
+**ب. إدارة التراخيص**
+
+**الهدف**: تفعيل أو إيقاف صلاحيات الجهات أو المستخدمين بناءً على الاشتراك أو الاستخدام.
+
+**خطوات العملية**:
+
+1. **الوصول إلى إدارة التراخيص**:
+   - من لوحة التحكم، ينتقل إلى قسم **"إدارة التراخيص"**.
+
+2. **عرض قائمة الجهات/المستخدمين**:
+   - يستعرض **قائمة الجهات أو الأفراد** المشتركة في المنصة.
+
+3. **تفعيل أو إيقاف الترخيص**:
+   - يحدد الجهة أو المستخدم المطلوب.
+   - ينقر على **"تعديل الحالة"**.
+   - يختار بين **"تفعيل"** أو **"إيقاف"** الصلاحيات.
+
+4. **تأكيد العملية**:
+   - يتلقى رسالة تأكيد.
+   - ينقر على **"تأكيد"** لإتمام العملية.
+
+**مخطط تسلسلي Sequence Diagram**:
+
+![alt text](images/1.1.2.svg)
+
+---
+
+#### 2. إدارة المحتوى التعليمي
+```
+جاري التحليل...
+```
+---
+
+#### 3. إدارة الجهات
+
+**أ. إنشاء حسابات الجهات**
+
+**الهدف**: إضافة جهات جديدة وتخصيص باقة الاشتراك لكل جهة.
+
+**خطوات العملية**:
+
+1. **الوصول إلى إدارة الجهات**:
+   - من لوحة التحكم، يختار **"إدارة الجهات"**.
+
+2. **إضافة جهة جديدة**:
+   - ينقر على **"إضافة جهة"**.
+   - يدخل معلومات الجهة:
+     - **اسم الجهة**.
+     - **بيانات الاتصال**.
+     - **معلومات المسؤول الأساسي**.
+
+3. **تحديد الباقة**:
+   - يختار **الباقة المناسبة** للجهة من قائمة الباقات المتاحة.
+
+4. **حفظ وإرسال التفاصيل**:
+   - ينقر على **"حفظ"**.
+   - يتم **إرسال تفاصيل تسجيل الدخول** إلى مسؤول الجهة عبر البريد الإلكتروني.
+
+**مخطط تسلسلي Sequence Diagram**:
+
+![alt text](images/1.2.1.svg)
+
+---
+
+#### 4. إدارة المستخدمين العامة
+
+**أ. إدارة حسابات المسؤولين**
+
+**الهدف**: إنشاء حسابات لمسؤولي الجهات ومنحهم الصلاحيات المناسبة.
+
+**خطوات العملية**:
+
+1. **الوصول إلى إدارة المستخدمين**:
+   - من لوحة التحكم، ينتقل إلى **"إدارة المستخدمين"**.
+
+2. **إضافة مسؤول جهة جديد**:
+   - ينقر على **"إضافة مستخدم"**.
+   - يختار **"مسؤول جهة"** كنوع المستخدم.
+   - يدخل التفاصيل:
+     - **الاسم**.
+     - **البريد الإلكتروني**.
+     - **كلمة المرور المؤقتة**.
+
+3. **تخصيص الصلاحيات**:
+   - يحدد **الصلاحيات الممنوحة** لمسؤول الجهة.
+   - يربطه بالجهة المعنية.
+
+4. **حفظ وإشعار المستخدم**:
+   - ينقر على **"حفظ"**.
+   - يتم **إرسال إشعار** للمستخدم بتفاصيل الحساب.
+
+**مخطط تسلسلي Sequence Diagram**:
+
+![alt text](images/1.3.1.svg)
+
+---
+
+#### 5. إدارة البيانات والتقارير
+
+**أ. تتبع الأداء العام**
+
+**الهدف**: الحصول على تقارير شاملة حول نشاط الجهات والمستخدمين.
+
+**خطوات العملية**:
+
+1. **الوصول إلى التقارير**:
+   - من لوحة التحكم، يختار **"التقارير"**.
+
+2. **تحديد نوع التقرير**:
+   - يختار **"تقارير الجهات"** أو **"تقارير المستخدمين"**.
+
+3. **تحديد الفترة الزمنية**:
+   - يحدد **الفترة الزمنية** المطلوبة للتقرير.
+
+4. **عرض التقرير**:
+   - ينقر على **"عرض التقرير"**.
+   - يستعرض البيانات والتحليلات.
+
+5. **تنزيل أو مشاركة التقرير**:
+   - يمكنه **تنزيل التقرير** بصيغة محددة.
+   - أو **مشاركته** مع جهات أخرى إذا لزم الأمر.
+
+**مخطط تسلسلي Sequence Diagram**:
+
+![alt text](images/1.4.1.svg)
+
+---
+
+### عمليات مسؤول الجهة
+
+**مسؤول الجهة** يدير العملية التعليمية داخل مؤسسته. العمليات الرئيسية ومسار تنفيذ كل عملية كالتالي:
+
+
+#### 1. إدارة الحسابات المحلية
+
+**أ. إضافة المستخدمين**
+
+**الهدف**: إنشاء حسابات للطلاب والمعلمين وربطهم بالمجموعات.
+
+**خطوات العملية**:
+
+1. **تسجيل الدخول**:
+   - **مسؤول الجهة** يسجل الدخول إلى لوحة تحكم الجهة.
+
+2. **الوصول إلى إدارة المستخدمين**:
+   - ينتقل إلى قسم **"إدارة المستخدمين"**.
+
+3. **إضافة مستخدم جديد**:
+   - ينقر على **"إضافة مستخدم"**.
+   - يختار نوع المستخدم (**طالب** أو **معلم**).
+
+4. **إدخال تفاصيل المستخدم**:
+   - **الاسم الكامل**.
+   - **البريد الإلكتروني**.
+   - **كلمة المرور المؤقتة**.
+
+5. **ربط بالمجموعات**:
+   - يحدد **المجموعة** أو **المجموعات** التي ينتمي إليها المستخدم.
+
+6. **تحديد الصلاحيات (للمعلمين)**:
+   - يخصص **الصلاحيات** المناسبة للمعلمين.
+
+7. **حفظ وإشعار المستخدم**:
+   - ينقر على **"حفظ"**.
+   - يتم **إرسال بريد إلكتروني** للمستخدم بتفاصيل الحساب.
+
+**مخطط تسلسلي Sequence Diagram**:
+
+![alt text](images/2.1.1.svg)
+
+---
+
+**ب. إدارة المجموعات**
+
+**الهدف**: إضافة المجموعات التعليمية وتنظيم الطلاب والمعلمين.
+
+**خطوات العملية**:
+
+1. **الوصول إلى إدارة المجموعات**:
+   - من لوحة التحكم، يختار **"إدارة المجموعات"**.
+
+2. **إنشاء مجموعة جديدة**:
+   - ينقر على **"إضافة مجموعة"**.
+   - يدخل **اسم المجموعة** ووصفها.
+
+3. **تحديد المجالات الدراسية**:
+   - يختار **المجالات الدراسية** المرتبطة بالمجموعة.
+
+4. **إضافة الطلاب والمعلمين**:
+   - يحدد **الطلاب** الذين سينضمون إلى المجموعة.
+   - يضيف **المعلمين** المسؤولين عن المجموعة.
+
+5. **حفظ المجموعة**:
+   - ينقر على **"حفظ"** لإتمام العملية.
+
+**مخطط تسلسلي Sequence Diagram**:
+
+![alt text](images/2.1.2.svg)
+
+---
+
+#### 2. إدارة المحتوى التعليمي
+
+**أ. تخصيص المحتوى**
+
+**الهدف**: تخصيص محتوى المقررات للمجموعات من مجالات، مواضيع، ومسابقات.
+
+**خطوات العملية**:
+
+1. **الوصول إلى إدارة المحتوى**:
+   - ينتقل إلى **"إدارة المحتوى"** في لوحة التحكم.
+
+2. **اختيار المجموعة**:
+   - يحدد **المجموعة** التي يرغب في تخصيص المحتوى لها.
+
+3. **تحديد المجالات والمواضيع**:
+   - يختار **المجالات التعليمية** المطلوبة.
+   - يضيف أو يزيل **مواضيع** معينة.
+
+4. **إعداد المسابقات**:
+   - ينقر على **"إنشاء مسابقة"**.
+   - يحدد **نوع المسابقة** و**الأسئلة**.
+
+5. **تعيين المحتوى**:
+   - يربط المحتوى بالمجموعة والطلاب المعنيين.
+
+6. **حفظ التعديلات**:
+   - ينقر على **"حفظ"** لتطبيق التغييرات.
+
+**مخطط تسلسلي Sequence Diagram**:
+
+![alt text](images/2.2.1.svg)
+
+---
+
+#### 3. تتبع تقدم الطلاب
+
+**أ. متابعة أداء الطلاب**
+
+**الهدف**: عرض تقارير تفصيلية حول تقدم الطلاب في المجالات التعليمية.
+
+**خطوات العملية**:
+
+1. **الوصول إلى تقارير الأداء**:
+   - من لوحة التحكم، يختار **"تقارير الأداء"**.
+
+2. **تحديد المجموعة أو الطالب**:
+   - يختار **مجموعة** معينة أو **طالب** محدد.
+
+3. **عرض التقرير**:
+   - يستعرض **التقارير** التي تظهر:
+     - **نسبة التقدم**.
+     - **الدرجات** في المسابقات.
+     - **المواضيع المكتملة**.
+
+4. **تحليل البيانات**:
+   - يحدد **نقاط القوة والضعف** لدى الطلاب.
+
+5. **اتخاذ الإجراءات**:
+   - يقرر **إعادة تخصيص** أنشطة أو مواضيع للطلاب المحتاجين.
+
+**مخطط تسلسلي Sequence Diagram**:
+
+![alt text](images/2.3.1.svg)
+
+---
+
+### عمليات الطالب
+
+**الطالب** هو المستخدم النهائي الذي يتفاعل مع المحتوى التعليمي. العمليات الرئيسية ومسار تنفيذ كل عملية كالتالي:
+
+
+#### 1. الوصول إلى المحتوى
+
+**الهدف**: تصفح المجالات التعليمية والمواضيع والوصول إلى المواد التعليمية.
+
+**خطوات العملية**:
+
+1. **تسجيل الدخول**:
+   - **الطالب** يدخل **اسم المستخدم** و**كلمة المرور** في صفحة تسجيل الدخول.
+
+2. **الوصول إلى الصفحة الرئيسية**:
+   - ينتقل إلى **الصفحة الرئيسية** التي تعرض المقررات والمجالات المتاحة.
+
+3. **تصفح المجالات**:
+   - يختار **المجال التعليمي** الذي يرغب في دراسته.
+
+4. **اختيار الموضوع**:
+   - يستعرض **المواضيع** ضمن المجال.
+   - ينقر على **موضوع** محدد.
+
+5. **الوصول إلى المحتوى**:
+   - يستعرض **المواد التعليمية**:
+     - **نصوص**.
+     - **فيديوهات**.
+     - **تمارين تفاعلية**.
+
+**مخطط تسلسلي Sequence Diagram**:
+
+![alt text](images/3.1.1.svg)
+
+---
+
+#### 2. المشاركة في التمارين والمسابقات
+
+**الهدف**: التفاعل مع التمارين والمسابقات لتعزيز الفهم وتقييم الأداء.
+
+**خطوات العملية**:
+
+1. **تلقي إشعار**:
+   - **الطالب** يتلقى **إشعارًا** بوجود مسابقة جديدة أو تمرين.
+
+2. **الوصول إلى قسم التمارين**:
+   - ينتقل إلى **"التمارين والمسابقات"** من القائمة.
+
+3. **اختيار التمرين أو المسابقة**:
+   - يحدد **التمرين** المطلوب.
+
+4. **بدء التمرين**:
+   - ينقر على **"بدء التمرين"**.
+
+5. **الإجابة على الأسئلة**:
+   - يقرأ **السؤال**.
+   - يختار **الإجابة** أو يكتبها.
+
+6. **إرسال الإجابات**:
+   - بعد الانتهاء، ينقر على **"إرسال"**.
+
+7. **استلام النتائج**:
+   - يتلقى **النتيجة** فورًا أو بعد تقييم المعلم.
+
+**مخطط تسلسلي Sequence Diagram**:
+
+![alt text](images/3.2.1.svg)
+
+---
+
+#### 3. تتبع التقدم
+
+**الهدف**: عرض ومتابعة التقدم الشخصي في المجالات والمواضيع.
+
+**خطوات العملية**:
+
+1. **الوصول إلى لوحة التقدم**:
+   - ينقر على **"لوحة التقدم"** من القائمة.
+
+2. **استعراض التقدم**:
+   - يشاهد **نسبة الإنجاز** في كل مجال وموضوع.
+
+3. **تحليل الأداء**:
+   - يستعرض **التقارير** التي تظهر:
+     - **نقاط القوة**.
+     - **المجالات التي تحتاج إلى تحسين**.
+
+4. **وضع خطط للتحسين**:
+   - يقرر **إعادة دراسة** مواضيع معينة.
+   - يستخدم **المواد الإضافية** المتاحة.
+
+**مخطط تسلسلي Sequence Diagram**:
+
+![alt text](images/3.3.1.svg)
+
+---
+
+### خلاصة
+
+- **مسؤول النظام** يقوم بإعداد وإدارة البنية التحتية للمنصة، بما في ذلك الباقات والتراخيص والجهات.
+- **مسؤول الجهة** يدير المستخدمين والمحتوى داخل مؤسسته، ويتابع أداء الطلاب.
+- **الطالب** يتفاعل مع المحتوى التعليمي، ويشارك في الأنشطة، ويتابع تقدمه.
+
+**استخدام الخطوات التفصيلية أعلاه يساعد في تصميم وتطوير المنصة بطريقة منظمة، ويضمن توفير تجربة مستخدم سلسة لجميع الأطراف.**
