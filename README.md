@@ -355,7 +355,7 @@
 
 **مخطط تسلسلي Sequence Diagram**:
 
-![alt text](images/1.2.1.svg)
+![alt text](images/1.3.1.svg)
 
 ---
 
@@ -388,7 +388,7 @@
 
 **مخطط تسلسلي Sequence Diagram**:
 
-![alt text](images/1.3.1.svg)
+![alt text](images/1.4.1.svg)
 
 ---
 
@@ -419,7 +419,7 @@
 
 **مخطط تسلسلي Sequence Diagram**:
 
-![alt text](images/1.4.1.svg)
+![alt text](images/1.5.1.svg)
 
 ---
 
