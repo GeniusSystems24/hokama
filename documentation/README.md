@@ -1,6 +1,6 @@
-[الرئيسية](/README.md)
-[الخطة الزمنية لتطوير المنصة](/time_plane/README.md)
-[المتطلبات من العميل](/reqirement//README.md)
+- [الرئيسية](/README.md).
+- [الخطة الزمنية لتطوير المنصة](/time_plane/README.md).
+- [المتطلبات من العميل](/reqirement//README.md).
 
 
 # نبذة عن المنصة

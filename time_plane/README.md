@@ -1,6 +1,6 @@
-[الرئيسية](/README.md)
-[الوصف التحليلي للمنصة](/documentation/README.md)
-[المتطلبات من العميل](/reqirement//README.md)
+- [الرئيسية](/README.md).
+- [الوصف التحليلي للمنصة](/documentation/README.md).
+- [المتطلبات من العميل](/reqirement//README.md).
 
 # **الخطة الزمنية لتطوير المنصة التعليمية**
 
